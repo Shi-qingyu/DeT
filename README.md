@@ -29,6 +29,10 @@
   </p>
 <br/>
 
+## Introduction
+We propose DeT, a tuning-based method that adapts Video Diffusion Transformers (DiT) for motion transfer tasks.
+![DeT](./assets/teaser.gif)
+
 ## Requirements
 Install the packages, we recommend using conda to set up a Python environment:
 ```bash
@@ -52,3 +56,4 @@ python test_conv1d_cogvideox.py
 
 ## MTBench
 The benchmark and test code will be release soon!!! Please stay tuned.
+![Figure](./assets/mtbench.png)
