@@ -29,3 +29,26 @@
   </p>
 <br/>
 
+## Requirements
+Install the packages, we recommend using conda to set up a Python environment:
+```bash
+conda create -n det python=3.10
+conda activate det
+pip install -r requirements.txt
+```
+
+## Training
+Please replace the model and data paths before running the script：
+```
+export HF_ENDPOINT=https://hf-mirror.com
+bash train_conv1d_cogvideox.sh
+```
+
+## Inference
+Please replace the model and data paths before running the script：
+```
+python test_conv1d_cogvideox.py
+```
+
+## MTBench
+The benchmark and test code will be release soon!!! Please stay tuned.
