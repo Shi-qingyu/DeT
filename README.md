@@ -57,3 +57,4 @@ python test_conv1d_cogvideox.py
 ## MTBench
 The benchmark and test code will be release soon!!! Please stay tuned.
 ![Figure](./assets/mtbench.png)
+![Figure](./assets/quantitative.png)
