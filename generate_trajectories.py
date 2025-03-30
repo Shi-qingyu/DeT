@@ -62,9 +62,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     root = Path(args.root)
-    video_dir = root.joinpath("Videos")
-    traj_dir = root.joinpath("Trajectories")
-    mask_dir = root.joinpath("Annotations")
+    video_dir = root.joinpath("videos")
+    traj_dir = root.joinpath("trajectories")
+    mask_dir = root.joinpath("masks")
 
     for video in video_dir.iterdir():
         video_path = video

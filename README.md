@@ -33,6 +33,30 @@
 We propose DeT, a tuning-based method that adapts Video Diffusion Transformers (DiT) for motion transfer tasks.
 ![DeT](./assets/teaser.gif)
 
+## Data Preparation
+We provide three examples in the directory ``./data``. You can use your own source videos, please prepare datasets and organize them like the following:
+```text
+├── data
+    ├── dance-twirl
+        ├── videos
+            ├── dance-twirl.mp4
+        ├── masks
+            ├── dance-twirl
+                ├── 00000.png
+                ...
+                
+        ├── trajectories
+            ├── dance-twirl.pth
+        ├── prompts.txt
+        ├── trajectories.txt
+        ├── videos.txt
+```
+
+Additionally, you need to annotate trajectories for the source video for the dense point tracking loss.
+```bash
+python generate_trajectories.py --root ./data/dance-twirl
+```
+
 ## Requirements
 Install the packages, we recommend using conda to set up a Python environment:
 ```bash
