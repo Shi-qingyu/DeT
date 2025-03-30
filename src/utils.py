@@ -425,3 +425,53 @@ def organize_outputs():
                 shutil.copytree(src_path.as_posix(), dst_path.as_posix())
             except:
                 pass
+
+
+def sample_points_in_mask(mask: torch.Tensor, grid_size: int):
+    if len(mask.shape) == 4:
+        _, _, h, w = mask.shape
+        mask = mask[0, 0]
+    elif len(mask.shape) == 3:
+        _, h, w = mask.shape
+        mask = mask[0]
+    else:
+        h, w = mask.shape
+    
+    num_grids_x = w // grid_size
+    num_grids_y = h // grid_size
+    grid_x = torch.linspace(0, w - 1, num_grids_x)    # [w // grid_size]
+    grid_y = torch.linspace(0, h - 1, num_grids_y)    # [h // grid_size]
+    grid_x, grid_y = torch.meshgrid(grid_x, grid_y, indexing="xy")
+
+    coor = torch.stack([grid_x, grid_y], dim=-1).flatten(0, 1).to(torch.int32)  # [N, 2]
+    in_mask = mask[coor[:, 1], coor[:, 0]] != 0
+    coor = coor[in_mask, :] # [N', 2]
+    return coor
+
+
+def sample_points_sparse(mask, N):
+    if len(mask.shape) == 4:
+        _, _, h, w = mask.shape
+        mask = mask[0, 0]
+    elif len(mask.shape) == 3:
+        _, h, w = mask.shape
+        mask = mask[0]
+    else:
+        h, w = mask.shape
+
+    mask_coords = torch.nonzero(mask != 0, as_tuple=False)
+    if mask_coords.shape[0] >= 4096:
+        sample_ids = torch.randint(0, mask_coords.shape[0], size=(4096,))
+        mask_coords = mask_coords[sample_ids]
+
+    distances = torch.cdist(mask_coords.float(), mask_coords.float(), p=2) 
+    density = torch.sum(distances < 5, dim=1)
+    
+    weights = 1 / (density.float() + 1e-6)
+    weights = weights / weights.sum()
+    
+    idx = torch.multinomial(weights, N, replacement=False)
+    sampled_coords = mask_coords[idx]
+    sampled_coords = sampled_coords[:, [1, 0]]
+
+    return sampled_coords
