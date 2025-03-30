@@ -33,8 +33,10 @@
 We propose DeT, a tuning-based method that adapts Video Diffusion Transformers (DiT) for motion transfer tasks.
 ![DeT](./assets/teaser.gif)
 
+
+
 ## Data Preparation
-We provide three examples in the directory ``./data``. You can use your own source videos, please prepare datasets and organize them like the following:
+We provide three examples in the directory ``./data``:
 ```text
 ├── data
     ├── dance-twirl
@@ -44,25 +46,22 @@ We provide three examples in the directory ``./data``. You can use your own sour
             ├── dance-twirl
                 ├── 00000.png
                 ...
-                
         ├── trajectories
             ├── dance-twirl.pth
         ├── prompts.txt
         ├── trajectories.txt
         ├── videos.txt
+    ├── dog-agility
+    ...
+    ├── snowboard
+    ...
 ```
-
-Additionally, you need to annotate trajectories for the source video for the dense point tracking loss.
+You can use your own source videos. Please prepare and organize the datasets following the provided examples. Additionally, annotate trajectories in the source video for the dense point tracking loss:
 ```bash
-python generate_trajectories.py --root ./data/dance-twirl
-```
-
-## Requirements
-Install the packages, we recommend using conda to set up a Python environment:
-```bash
-conda create -n det python=3.10
-conda activate det
-pip install -r requirements.txt
+cd checkpoints
+wget https://hf-mirror.com/facebook/cotracker3/resolve/main/scaled_online.pth
+cd ..
+python generate_trajectories.py --root ./data/your-data
 ```
 
 ## Training
@@ -80,5 +79,14 @@ python test_conv1d_cogvideox.py
 
 ## MTBench
 The benchmark and test code will be release soon!!! Please stay tuned.
-<!-- ![Figure](./assets/mtbench.png) -->
 ![Figure](./assets/quantitative.png)
+
+## Citing DeT
+```
+@article{shi2025decouple,
+  title={Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer},
+  author={Shi, Qingyu and Wu, Jianzong and Bai, Jinbin and Zhang, Jiangning and Qi, Lu and Li, Xiangtai and Tong, Yunhai},
+  journal={arXiv preprint arXiv:2503.17350},
+  year={2025}
+}
+```
