@@ -19,14 +19,12 @@
      PKU, NTU, NUS, ZJU, UC Merced
   </p>
 
-  <p align="center">
-    <a href='https://arxiv.org/pdf/2503.17350'>
-      <img src='https://img.shields.io/badge/Paper-PDF-green?style=flat&logo=arXiv&logoColor=green' alt='arXiv PDF'> </a>
-    <a href='https://shi-qingyu.github.io/DeT.github.io/' style='padding-left: 0.5rem;'>
-      <img src='https://img.shields.io/badge/Project-Page-blue?style=flat&logo=Google%20chrome&logoColor=blue' alt='Project Page'> </a>
-    <!-- <a href='https://huggingface.co/spaces/shilinxu/rap-sam' style='padding-left: 0.5rem;'>
-      <img src='https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-App-blue' alt='HuggingFace Model'> </a> -->
-  </p>
+  <div align="center">
+    <a href='https://arxiv.org/pdf/2503.17350'><img src="https://img.shields.io/static/v1?label=ArXiv&message=2406.07209&color=B31B1B&logo=arxiv"></a> &ensp;
+    <a href='https://shi-qingyu.github.io/DeT.github.io/'><img src="https://img.shields.io/static/v1?label=Project%20Page&message=GitHub&color=blue&logo=github"></a> &ensp;
+    <a href='https://huggingface.co/datasets/QingyuShi/MTBench'><img src="https://img.shields.io/static/v1?label=MTBench&message=HuggingFace&color=yellow"></a> &ensp;
+  </div>
+</p>
 <br/>
 
 ## Introduction
@@ -78,8 +76,18 @@ python test_conv1d_cogvideox.py
 ```
 
 ## MTBench
-The benchmark and test code will be release soon!!! Please stay tuned.
+Download MTBench with:
+
+```
+huggingface-cli download QingyuShi/MTBench --local-dir ./MTBench --repo-type dataset
+```
+For quicker ablation studies, a lightweight subset—``MTBench_subset``—is included in the repository to reduce computational overhead.
+
+The evaluation script is located at ``./evaluation.py``.
+
 ![Figure](./assets/quantitative.png)
+
+
 
 ## Citing DeT
 ```
