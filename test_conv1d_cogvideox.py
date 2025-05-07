@@ -9,9 +9,9 @@ from src.det.attention_processor import SkipConv1dCogVideoXAttnProcessor2_0
 
 prompt = "A gorilla is dancing on the beach."
 negative_prompt = ""
-seed = 0
+seed = 42
 device = "cuda"
-ckpt_path = "checkpoints/lr_1e-5_skipconv1d_kernel_3_mid_128_gas_1_mse_1.0_dance-twirl/checkpoint-500/motion_embedding.pth"
+ckpt_path = "checkpoints/lr_1e-5_skipconv1d_kernel_3_mid_128_gas_1_mse_1.0_tl_0.1_dance-twirl/checkpoint-500/motion_embedding.pth"
 rank = 128
 kernel_size = 3
 module_type = "conv1d"
@@ -60,11 +60,11 @@ video = pipe(
     num_inference_steps=50,
     num_frames=49,
     guidance_scale=6,
-    generator=torch.Generator(device=device).manual_seed(42),
+    generator=torch.Generator(device=device).manual_seed(seed),
 ).frames[0]
 
 save_dir_name = prompt.replace(" ", "_")[:-1]
 save_dir = os.path.join("outputs", save_dir_name)
 os.makedirs(save_dir, exist_ok=True)
-save_path = os.path.join(save_dir, f"{config}_{42}.mp4")
+save_path = os.path.join(save_dir, f"{config}_{seed}.mp4")
 export_to_video(video, save_path, fps=8)
