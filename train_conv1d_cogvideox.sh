@@ -1,7 +1,7 @@
 #!/bin/bash
 export MODEL_PATH="THUDM/CogVideoX-5b"
 export DATASET_PATH="data/dance-twirl"
-export OUTPUT_PATH="checkpoints/lr_1e-5_skipconv1d_kernel_3_mid_128_gas_1_mse_1.0_tl_0.1_dance-twirl"
+export OUTPUT_PATH="checkpoints/lr_1e-5_skipconv1d_kernel_3_mid_128_gas_1_mse_1.0_dance-twirl"
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 
@@ -39,6 +39,4 @@ accelerate launch --config_file configs/accelerate_config_machine_single.yaml --
   --optimizer AdamW \
   --adam_beta1 0.9 \
   --adam_beta2 0.95 \
-  --mse_weight 1.0 \
-  --tracking_loss \
-  --tracking_loss_weight 0.1
+  --mse_weight 1.0
