@@ -9,9 +9,9 @@ from src.det.attention_processor import SkipConv1dCogVideoXAttnProcessor2_0
 
 prompt = "A gorilla is dancing on the beach."
 negative_prompt = ""
-seed = 42
+seed = 7
 device = "cuda"
-ckpt_path = "checkpoints/lr_1e-5_skipconv1d_kernel_3_mid_128_gas_1_mse_1.0_tl_0.1_dance-twirl/checkpoint-500/motion_embedding.pth"
+ckpt_path = "checkpoints/lr_1e-5_skipconv1d_kernel_3_mid_128_gas_1_mse_1.0_dance-twirl/checkpoint-500/motion_embedding.pth"
 rank = 128
 kernel_size = 3
 module_type = "conv1d"
