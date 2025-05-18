@@ -16,7 +16,7 @@
     ·
     <a href="https://scholar.google.com/citations?user=T4gqdPkAAAAJ&hl=zh-CN"><strong>Yunhai Tong</strong></a>
   <br >
-     PKU, NTU, NUS, ZJU, UC Merced
+     Peking University, Nanyang Technological University, National University of Singapore, Zhejiang University, UC Merced
   </p>
 
   <div align="center">
@@ -65,6 +65,7 @@ python generate_trajectories.py --root ./data/your-data
 ## Training
 Please replace the model and data paths before running the script：
 ```
+% if you are in mainland China, we recommend to use hf-mirror.
 export HF_ENDPOINT=https://hf-mirror.com
 bash train_conv1d_cogvideox.sh
 ```
@@ -91,7 +92,7 @@ The evaluation script is located at ``./evaluation.py``.
 
 ## Citing DeT
 ```
-@article{shi2025decouple,
+@article{DeT,
   title={Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer},
   author={Shi, Qingyu and Wu, Jianzong and Bai, Jinbin and Zhang, Jiangning and Qi, Lu and Li, Xiangtai and Tong, Yunhai},
   journal={arXiv preprint arXiv:2503.17350},
