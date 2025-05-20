@@ -67,13 +67,13 @@ Please replace the model and data paths before running the script：
 ```
 % if you are in mainland China, we recommend to use hf-mirror.
 export HF_ENDPOINT=https://hf-mirror.com
-bash train_conv1d_cogvideox.sh
+bash train_cogvideox.sh
 ```
 
 ## Inference
 Please replace the model and data paths before running the script：
 ```
-python test_conv1d_cogvideox.py
+bash run_cogvideox.sh
 ```
 
 ## MTBench

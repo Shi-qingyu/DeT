@@ -8,7 +8,7 @@ export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 #  --use_8bit_adam is necessary for CogVideoX-5B-I2V
 # if you are not using wth 8 gus, change `accelerate_config_machine_single.yaml` num_processes as your gpu number
 accelerate launch --config_file configs/accelerate_config_machine_single.yaml --main_process_port 8000 --multi_gpu \
-  train_conv1d_cogvideox.py \
+  train_cogvideox.py \
   --gradient_checkpointing \
   --use_8bit_adam  \
   --pretrained_model_name_or_path $MODEL_PATH \
@@ -39,4 +39,6 @@ accelerate launch --config_file configs/accelerate_config_machine_single.yaml --
   --optimizer AdamW \
   --adam_beta1 0.9 \
   --adam_beta2 0.95 \
-  --mse_weight 1.0
+  --mse_weight 0.5 \
+  --tracking_loss \
+  --tracking_loss_weight 0.1 \
