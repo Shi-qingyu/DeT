@@ -1,6 +1,8 @@
 <br />
 <p align="center">
-  <h1 align="center">Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer</h1>
+  <h1 align="center">Decouple and Track: Benchmarking and Improving Video Diffusion Transformers for Motion Transfer 
+  
+  ICCV 2025</h1>
   <p align="center">
     <a href="https://scholar.google.com.hk/citations?user=VpSqhJAAAAAJ&hl=zh-CN"><strong>Qingyu Shi</strong></a>
     ·
