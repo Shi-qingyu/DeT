@@ -39,6 +39,4 @@ accelerate launch --config_file configs/accelerate_config_machine_single.yaml --
   --optimizer AdamW \
   --adam_beta1 0.9 \
   --adam_beta2 0.95 \
-  --mse_weight 0.5 \
-  --tracking_loss \
-  --tracking_loss_weight 0.1 \
+  --mse_weight 1.0
