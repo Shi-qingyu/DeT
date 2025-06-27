@@ -56,12 +56,12 @@ We provide three examples in the directory ``./data``:
     ├── snowboard
     ...
 ```
-You can use your own source videos. Please prepare and organize the datasets following the provided examples. Additionally, annotate trajectories in the source video for the dense point tracking loss:
+**[Optional]** You can use your own source videos. Please prepare and organize the datasets following the provided examples. Additionally, annotate trajectories in the source video for the dense point tracking loss:
 ```bash
 cd checkpoints
 wget https://hf-mirror.com/facebook/cotracker3/resolve/main/scaled_online.pth
 cd ..
-python generate_trajectories.py --root ./data/your-data
+python generate_trajectories.py --root ./data/your-data    % should be a directory such as ./data/dance-twirl
 ```
 
 ## Training
