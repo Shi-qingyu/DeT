@@ -12,9 +12,9 @@
     ·
     <a href="http://luqi.info/"><strong>Lu Qi</strong></a>
     ·
-    <a href="https://lxtgh.github.io/"><strong>Xiangtai Li</strong></a>
-    ·
     <a href="https://scholar.google.com/citations?user=T4gqdPkAAAAJ&hl=zh-CN"><strong>Yunhai Tong</strong></a>
+    ·
+    <a href="https://lxtgh.github.io/"><strong>Xiangtai Li</strong></a>
   <br >
      Peking University, Nanyang Technological University, National University of Singapore, Zhejiang University, UC Merced
   </p>
