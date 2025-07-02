@@ -16,7 +16,7 @@
     ·
     <a href="https://lxtgh.github.io/"><strong>Xiangtai Li</strong></a>
   <br >
-     Peking University, Nanyang Technological University, National University of Singapore, Zhejiang University, UC Merced
+     PKU, NTU, NUS, ZJU, UC Merced
   </p>
 
   <div align="center">
