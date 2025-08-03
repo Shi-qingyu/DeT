@@ -23,6 +23,7 @@ tqdm>=4.65.0
 requests>=2.30.0
 pyyaml>=6.0.0
 einops>=0.7.0
+bitsandbytes
 scikit-learn
 scipy
 
