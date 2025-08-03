@@ -13,7 +13,7 @@ import torch.nn.functional as F
 import torch.fft as fft
 from torchvision.io import write_png
 
-from pytorch_wavelets import DWT1DForward, DWT1DInverse
+# from pytorch_wavelets import DWT1DForward, DWT1DInverse
 from torchvision.io import read_image, write_png
 from torchvision.utils import make_grid
 from torchvision import transforms
